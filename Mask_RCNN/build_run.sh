@@ -5,7 +5,7 @@ docker build \
 --tag="m_rcnn:0.1" \
 .
 # Create folder that will bind to container
-mkdir src
+mkdir -p src
 # Create container with gpu capabilities
 docker create \
 --gpus all \
