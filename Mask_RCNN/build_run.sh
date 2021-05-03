@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Clone repo into a temporal folder. The google TF2 Dockerfile copies the repo from the temporal folder to the image
-# The tmeporal folder will be deleted to free space in the host device later
+# Ceate a folder where the repo will be cloned. It will be used as a volume to share files
+# between host and container
 mkdir -p volume
 cd $(pwd)/volume
 git clone https://github.com/lemontyc/models.git
@@ -14,7 +14,7 @@ docker build \
 .
 
 # Move outside volume/
-cd ../..
+cd ../../
 
 # Create container with gpu capabilities
 docker create \
