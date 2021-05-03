@@ -2,3 +2,5 @@ Mask_RCNN/src/Mask_RCNN/
 .vscode/
 frustum-convnet/src/frustum-convnet
 Mask_RCNN/dataset/images/
+
+realsense-sdk/librealsense/
