@@ -5,7 +5,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         66,
                         69,
@@ -93,7 +93,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         165,
                         163,
@@ -259,7 +259,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         699,
                         702,
@@ -333,7 +333,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1064,
                         1068,
@@ -387,7 +387,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         348,
                         348,
@@ -1711,7 +1711,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         697,
                         697,
@@ -1847,7 +1847,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         701,
                         698,
@@ -1983,7 +1983,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         705,
                         702,
@@ -2055,7 +2055,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         736,
                         737,
@@ -2173,7 +2173,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         901,
                         904,
@@ -2363,7 +2363,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1031,
                         1031,
@@ -2475,7 +2475,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         878,
                         877,
@@ -2573,7 +2573,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         593,
                         593,
@@ -6179,7 +6179,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         150,
                         148,
@@ -6329,7 +6329,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         508,
                         517,
@@ -6491,7 +6491,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         564,
                         561,
@@ -6631,7 +6631,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         741,
                         732,
@@ -6905,7 +6905,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         912,
                         919,
@@ -7037,7 +7037,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1225,
                         1220,
@@ -16050,7 +16050,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         28,
                         28,
@@ -16286,7 +16286,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         434,
                         445,
@@ -16468,7 +16468,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         273,
                         268,
@@ -16660,7 +16660,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         5,
                         6,
@@ -16710,7 +16710,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         443,
                         441,
@@ -16812,7 +16812,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         453,
                         455,
@@ -16908,7 +16908,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         716,
                         721,
@@ -17034,7 +17034,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         830,
                         833,
@@ -17134,7 +17134,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         839,
                         840,
@@ -18812,7 +18812,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         144,
                         146,
@@ -18992,7 +18992,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         191,
                         193,
@@ -19164,7 +19164,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         145,
                         139,
@@ -19328,7 +19328,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         158,
                         160,
@@ -19422,7 +19422,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         63,
                         69,
@@ -19578,7 +19578,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         203,
                         203,
@@ -19672,7 +19672,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         393,
                         393,
@@ -19744,7 +19744,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         465,
                         465,
@@ -19858,7 +19858,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         232,
                         233,
@@ -19958,7 +19958,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         661,
                         661,
@@ -20020,7 +20020,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         671,
                         673,
@@ -20086,7 +20086,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         913,
                         915,
@@ -20208,7 +20208,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         977,
                         980,
@@ -20366,7 +20366,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         810,
                         809,
@@ -20496,7 +20496,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         804,
                         803,
@@ -20592,7 +20592,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1027,
                         1027,
@@ -20692,7 +20692,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1046,
                         1047,
@@ -20794,7 +20794,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1117,
                         1117,
@@ -21002,7 +21002,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1031,
                         1031,
@@ -23240,7 +23240,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         34,
                         33,
@@ -23460,7 +23460,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         667,
                         667,
@@ -23710,7 +23710,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         625,
                         626,
@@ -23992,7 +23992,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         804,
                         806,
@@ -24236,7 +24236,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         970,
                         969,
@@ -24448,7 +24448,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1174,
                         1163,
@@ -24664,7 +24664,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1040,
                         1042,
@@ -25518,7 +25518,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         210,
                         215,
@@ -25764,7 +25764,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         203,
                         200,
@@ -25910,7 +25910,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         85,
                         89,
@@ -25986,7 +25986,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         205,
                         210,
@@ -26302,7 +26302,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         182,
                         185,
@@ -26462,7 +26462,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         494,
                         496,
@@ -26532,7 +26532,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         490,
                         492,
@@ -26722,7 +26722,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         605,
                         607,
@@ -26824,7 +26824,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         775,
                         783,
@@ -26898,7 +26898,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1025,
                         1029,
@@ -27210,7 +27210,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         393,
                         399,
@@ -27470,7 +27470,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         367,
                         369,
@@ -27572,7 +27572,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         714,
                         714,
@@ -27652,7 +27652,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         755,
                         754,
@@ -27750,7 +27750,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         761,
                         761,
@@ -27854,7 +27854,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         740,
                         742,
@@ -27922,7 +27922,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         964,
                         966,
@@ -28012,7 +28012,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1224,
                         1228,
@@ -31282,7 +31282,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         246,
                         254,
@@ -31436,7 +31436,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         216,
                         206,
@@ -31648,7 +31648,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         819,
                         821,
@@ -31882,7 +31882,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         729,
                         734,
@@ -35629,7 +35629,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         289,
                         284,
@@ -35831,7 +35831,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         397,
                         402,
@@ -36005,7 +36005,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         522,
                         524,
@@ -36097,7 +36097,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         938,
                         933,
@@ -37338,7 +37338,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         139,
                         135,
@@ -37512,7 +37512,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         366,
                         376,
@@ -37656,7 +37656,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         518,
                         516,
@@ -37762,7 +37762,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         796,
                         791,
@@ -37828,7 +37828,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         824,
                         828,
@@ -37888,7 +37888,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         806,
                         803,
@@ -40683,7 +40683,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         117,
                         117,
@@ -40825,7 +40825,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         274,
                         278,
@@ -40909,7 +40909,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         243,
                         245,
@@ -41027,7 +41027,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         548,
                         549,
@@ -41163,7 +41163,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         513,
                         516,
@@ -41289,7 +41289,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         525,
                         523,
@@ -41415,7 +41415,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         492,
                         493,
@@ -41487,7 +41487,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         697,
                         701,
@@ -41663,7 +41663,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         660,
                         660,
@@ -41723,7 +41723,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1089,
                         1090,
@@ -41823,7 +41823,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1220,
                         1231,
@@ -50810,7 +50810,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         228,
                         228,
@@ -50944,7 +50944,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         507,
                         503,
@@ -51054,7 +51054,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         569,
                         574,
@@ -51222,7 +51222,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         585,
                         598,
@@ -51276,7 +51276,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1001,
                         1003,
@@ -51404,7 +51404,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         819,
                         807,
@@ -51650,7 +51650,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1262,
                         1258,
@@ -55161,7 +55161,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         45,
                         48,
@@ -55345,7 +55345,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         469,
                         472,
@@ -55551,7 +55551,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         986,
                         986,
@@ -55623,7 +55623,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1166,
                         1168,
@@ -55831,7 +55831,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1094,
                         1094,
@@ -55917,7 +55917,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1202,
                         1206,
@@ -57615,7 +57615,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         201,
                         203,
@@ -57745,7 +57745,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         282,
                         287,
@@ -57963,7 +57963,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         336,
                         339,
@@ -58111,7 +58111,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         934,
                         933,
@@ -58193,7 +58193,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         976,
                         976,
@@ -58355,7 +58355,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         869,
                         869,
@@ -58469,7 +58469,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1215,
                         1215,
@@ -59359,7 +59359,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         78,
                         77,
@@ -59511,7 +59511,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         340,
                         342,
@@ -59621,7 +59621,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         382,
                         383,
@@ -59883,7 +59883,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         153,
                         153,
@@ -60101,7 +60101,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         389,
                         390,
@@ -60295,7 +60295,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         61,
                         61,
@@ -60405,7 +60405,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         6,
                         16,
@@ -60487,7 +60487,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         628,
                         633,
@@ -60595,7 +60595,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1156,
                         1160,
@@ -62796,7 +62796,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         60,
                         63,
@@ -62904,7 +62904,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         335,
                         341,
@@ -63014,7 +63014,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         262,
                         256,
@@ -63244,7 +63244,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         351,
                         351,
@@ -63330,7 +63330,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         316,
                         322,
@@ -63498,7 +63498,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         527,
                         529,
@@ -63620,7 +63620,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         542,
                         546,
@@ -63726,7 +63726,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         677,
                         676,
@@ -63914,7 +63914,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         921,
                         927,
@@ -64158,7 +64158,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1056,
                         1057,
@@ -64318,7 +64318,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1267,
                         1264,
@@ -66455,7 +66455,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         196,
                         193,
@@ -66599,7 +66599,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         240,
                         246,
@@ -66783,7 +66783,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         830,
                         817,
@@ -66951,7 +66951,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         487,
                         486,
@@ -67069,7 +67069,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         234,
                         236,
@@ -68413,7 +68413,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         625,
                         622,
@@ -68541,7 +68541,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1040,
                         1032,
@@ -68695,7 +68695,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1021,
                         1025,
@@ -68843,7 +68843,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1065,
                         1067,
@@ -68984,7 +68984,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         247,
                         241,
@@ -69140,7 +69140,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         399,
                         396,
@@ -69210,7 +69210,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         392,
                         392,
@@ -69312,7 +69312,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         318,
                         320,
@@ -69450,7 +69450,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         758,
                         757,
@@ -69614,7 +69614,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         906,
                         913,
@@ -69736,7 +69736,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         503,
                         500,
@@ -70014,7 +70014,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         813,
                         816,
@@ -70072,7 +70072,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         817,
                         816,
@@ -70180,7 +70180,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         816,
                         814,
@@ -70324,7 +70324,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1054,
                         1054,
@@ -70446,7 +70446,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1175,
                         1174,
@@ -70620,7 +70620,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1161,
                         1159,
@@ -70774,7 +70774,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1202,
                         1192,
@@ -77502,7 +77502,7 @@
         "regions": [
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         187,
                         179,
@@ -77806,7 +77806,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         256,
                         259,
@@ -77982,7 +77982,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         699,
                         699,
@@ -78156,7 +78156,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         637,
                         639,
@@ -78274,7 +78274,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         627,
                         623,
@@ -78332,7 +78332,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1112,
                         1109,
@@ -78464,7 +78464,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         802,
                         800,
@@ -78548,7 +78548,7 @@
             },
             {
                 "shape_attributes": {
-                    "name": "polyline",
+                    "name": "polygon",
                     "all_points_x": [
                         1238,
                         1238,
