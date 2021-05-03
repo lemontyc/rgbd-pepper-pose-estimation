@@ -4,3 +4,5 @@ frustum-convnet/src/frustum-convnet
 Mask_RCNN/dataset/images/
 
 realsense-sdk/librealsense/
+
+Mask_RCNN/src/models/
