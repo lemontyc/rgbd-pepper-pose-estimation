@@ -1,7 +1,8 @@
+from modules.utils import *
 import pyrealsense2 as rs 
 import os
 import numpy as np
-from modules.utils import *
+import time
 
 class Realsense:
     def __init__(self, recording_path, m_rcnn_path):
@@ -25,9 +26,20 @@ class Realsense:
         self.colorizer = rs.colorizer()
 
         self.frames = []
+        self.depth_frame_aligned = []
         self.depth_image_aligned_color = []
         self.color_image = []
+        self.saved_depth_image = []
+        self.start_time = 0
 
+    def start_capture_timer(self):
+        self.start_time = time.time()
+    
+    def capture_delay_ready(self, capture_delay):
+        if (time.time() - self.start_time) > capture_delay:
+            return True
+        else:
+            return False
 
     def first_run(self):
          # Skip 5 first frames to give the Auto-Exposure time to adjust
@@ -54,11 +66,14 @@ class Realsense:
         self.frames = align.process(self.frames)
 
         # Update color and depth frames
-        depth_frame_aligned = self.frames.get_depth_frame()
+        self.depth_frame_aligned = self.frames.get_depth_frame()
 
         # Colorize depth frame to jet colormap
-        depth_frame_aligned_color = self.colorizer.colorize(depth_frame_aligned)
+        depth_frame_aligned_color = self.colorizer.colorize(self.depth_frame_aligned)
 
         # Save aligned colorized depth and color images
         self.depth_image_aligned_color       = np.asanyarray(depth_frame_aligned_color.get_data())
         self.color_image                     = np.asanyarray(color_frame.get_data())
+
+    def save_depth(self):
+        self.saved_depth_image = np.asanyarray(self.depth_frame_aligned.get_data())
