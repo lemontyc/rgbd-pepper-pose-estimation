@@ -2,3 +2,5 @@ Mask_RCNN/src/Mask_RCNN/
 .vscode/
 frustum-convnet/src/frustum-convnet
 *.bag
+
+Mask_RCNN/realsense/opencv_GUI/modules/__pycache__/
