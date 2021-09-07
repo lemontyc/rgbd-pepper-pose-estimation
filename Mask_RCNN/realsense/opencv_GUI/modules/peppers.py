@@ -24,7 +24,7 @@ class Peppers:
         while not self.json_file:
             self.read_JSON()
 
-    def validate_size(x_coords, y_coords, threshold):
+    def validate_size(self, x_coords, y_coords, threshold):
         if (x_coords[1] - x_coords[0]) * (y_coords[1] - y_coords[0]) > (threshold**2):
             return True
         else:
@@ -38,12 +38,17 @@ class Peppers:
         radians = math.atan2(peduncle_y - pepper_y, peduncle_x - pepper_x)
         return math.degrees(radians)
 
-    def read_json_data(self):
+    def read_json_data(self, camera):
         file_name = self.json_file[0]
-        print("Processing bboxes of {}".format(file_name))
-        with open(os.path.join(self.m_rcnn_path + '/' + self.m_rcnn_json_path + '/', file_name)) as json_file:
-            self.json_data = json.load(json_file)
-            self.json_data = np.array(self.json_data, dtype=object)
+
+        if file_name.split('.')[0] == str(camera.frame_number):
+            print("Processing bboxes of {}".format(file_name))
+            with open(os.path.join(self.m_rcnn_path + '/' + self.m_rcnn_json_path + '/', file_name)) as json_file:
+                self.json_data = json.load(json_file)
+                self.json_data = np.array(self.json_data, dtype=object)
+            return True
+        else:
+            return False
         
             
     def parse_json_data(self):
@@ -88,12 +93,24 @@ class Peppers:
                 complete_pepper_list["peduncles"][peduncle_counter]["center"]["y"] = bbox_center[1]
 
                 peduncle_counter = peduncle_counter + 1
-        print(complete_pepper_list)
+        # print(complete_pepper_list)
+        self.complete_pepper_list = complete_pepper_list
 
-            
+    def filter_peppers(self, BBOX_SIZE_THRESHOLD):
+        pepper_counter = 0
+        final_pepper_list = {}
+        final_pepper_list["peppers"] = {}
+        for key, pepper in self.complete_pepper_list["peppers"].items():
+            if(self.validate_size([ pepper["x_min"], pepper["x_max"] ], [ pepper["y_min"], pepper["y_max"] ], BBOX_SIZE_THRESHOLD)):
+                final_pepper_list["peppers"][pepper_counter] = {}
+                final_pepper_list["peppers"][pepper_counter] = pepper
+                pepper_counter = pepper_counter + 1
 
+        self.final_pepper_list = final_pepper_list
+        
 
     def process_pepper_data(self):
         self.read_json_data()
         self.parse_json_data()
-        pass
+
+    

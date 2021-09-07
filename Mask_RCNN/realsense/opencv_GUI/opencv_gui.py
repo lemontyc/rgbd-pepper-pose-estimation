@@ -13,7 +13,7 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
     try:
         camera = Realsense(recording_path, m_rcnn_path)
         peppers = Peppers(m_rcnn_path, m_rcnn_json_path)
-        gui = Windows()
+        gui = Windows(peppers.expected)
         first_run = False
         
         while True:
@@ -41,24 +41,37 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
             # Capture image from clean stream and copy to M-RCNN container for inferance
             # This process makes the stream slow down
             if(camera.capture_delay_ready(gui.capture_delay)):
-                print("Running inferance at image #{}".format(camera.frames.get_frame_number()))
+                print("Saved frame #{} for inference".format(camera.frames.get_frame_number()))
                 save_image(camera.color_image, str(camera.frames.get_frame_number()), m_rcnn_path, 'input')
+                camera.save_color()
                 camera.save_depth()
                 camera.start_capture_timer()
 
             # Try to read bbox JSON
             peppers.read_JSON()
             if peppers.json_file:
-                peppers.read_json_data()
-                peppers.parse_json_data()
+                # Only parse data if read file matches saved frame
+                # Prevents desynch
+                if peppers.read_json_data(camera):
+                    # Delete json file
+                    delete_all(m_rcnn_path, M_RCNN_JSON_PATH)
+                    peppers.parse_json_data()
+                    gui.draw_all_objects_bbox(camera.saved_color_image, peppers.complete_pepper_list, (199, 240, 218), (129, 176, 247), 1)
+                    peppers.filter_peppers(gui.BBOX_SIZE_THRESHOLD)
+                    gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
+
+                    
+                    gui.display_inference_stream(camera.saved_color_image)
+
+                    
             
 
 
 
-
+            gui.user_paused()
             if(gui.user_exited()):
                 break
-
+            
 
     finally:
         print("Stopping depth and image processing")

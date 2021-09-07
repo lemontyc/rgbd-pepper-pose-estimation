@@ -30,7 +30,9 @@ class Realsense:
         self.depth_image_aligned_color = []
         self.color_image = []
         self.saved_depth_image = []
+        self.saved_color_image = []
         self.start_time = 0
+        self.frame_number = 0
 
     def start_capture_timer(self):
         self.start_time = time.time()
@@ -75,5 +77,9 @@ class Realsense:
         self.depth_image_aligned_color       = np.asanyarray(depth_frame_aligned_color.get_data())
         self.color_image                     = np.asanyarray(color_frame.get_data())
 
+    def save_color(self):
+        self.saved_color_image = self.color_image
+
     def save_depth(self):
         self.saved_depth_image = np.asanyarray(self.depth_frame_aligned.get_data())
+        self.frame_number       = self.frames.get_frame_number()
