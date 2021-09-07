@@ -107,14 +107,38 @@ class Peppers:
             if(self.validate_size([ pepper["x_min"], pepper["x_max"] ], [ pepper["y_min"], pepper["y_max"] ], BBOX_SIZE_THRESHOLD)):
                 final_pepper_list["peppers"][pepper_counter] = {}
                 final_pepper_list["peppers"][pepper_counter]["2d_info"] = {}
-                final_pepper_list["peppers"][pepper_counter]["2d_info"] = pepper
+                final_pepper_list["peppers"][pepper_counter]["2d_info"]["fruit"] = {}
+                final_pepper_list["peppers"][pepper_counter]["2d_info"]["fruit"] = pepper
                 pepper_counter = pepper_counter + 1
 
         self.final_pepper_list = final_pepper_list
         
     def find_peduncles(self):
-        for pepper, information in self.final_pepper_list["peppers"].items():
-            print(information)
+        for pepper, pepper_data in self.final_pepper_list["peppers"].items():
+            pepper_2d_info = pepper_data["2d_info"]["fruit"]
+
+            pepper_center_x = pepper_2d_info["center"]["x"]
+            pepper_center_y = pepper_2d_info["center"]["y"]
+
+            # Currently using the average size of the bbox to find peduncles near the center of the pepper
+            avg_size = int(((pepper_2d_info["x_max"] - pepper_2d_info["x_min"]) + (pepper_2d_info["y_max"] - pepper_2d_info["y_min"]))/2)
+            
+            # Traverse peduncles to find one that corresponds to a pepper
+            for peduncle, peduncle_data in self.complete_pepper_list["peduncles"].items():
+                peduncle_2d_info = peduncle_data["2d_info"]
+                
+                peduncle_center_x = peduncle_2d_info["center"]["x"]
+                peduncle_center_y = peduncle_2d_info["center"]["y"]
+
+                # Search algorithm
+                if( pepper_center_x + avg_size > peduncle_center_x and 
+                    pepper_center_x - avg_size < peduncle_center_x):
+                    if( pepper_center_y + avg_size > peduncle_center_y and 
+                        pepper_center_y - avg_size   < peduncle_center_y):
+                        # print("Found pepper {} with peduncle {}".format(pepper_2d_info, peduncle_2d_info))
+                        self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = {}
+                        self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = peduncle_2d_info
+                        
         
 
     def process_pepper_data(self):

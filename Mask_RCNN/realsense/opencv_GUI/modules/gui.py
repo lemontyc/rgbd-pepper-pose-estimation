@@ -58,6 +58,10 @@ class Windows():
             for bbox_number, bbox in value.items():
                 info_2d = bbox['2d_info']
                 if key == 'peppers':
+                    # This validation is necessary as final_pepper_list has different structure
+                    # than comple_pepper_list
+                    if 'fruit' in bbox['2d_info']:
+                        info_2d = bbox['2d_info']['fruit']
                     cv2.rectangle(saved_color_image,    (int(info_2d["x_min"] * self.expected), int(info_2d["y_min"] * self.expected)), 
                                                         (int(info_2d["x_max"] * self.expected), int(info_2d["y_max"] * self.expected)), 
                                                         pepper_color, size)

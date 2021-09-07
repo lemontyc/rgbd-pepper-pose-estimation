@@ -3,6 +3,7 @@ from modules.realsense import Realsense
 from modules.peppers import Peppers
 from modules.gui import Windows
 from modules.utils import *
+import pprint
 
 RECORDING_PATH = '../../dataset/bags/cart_3_red_yellow.bag'
 M_RCNN_PATH = '../../src/Mask_RCNN/datasets/process'
@@ -59,7 +60,8 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.complete_pepper_list, (199, 240, 218), (129, 176, 247), 1)
                     peppers.filter_peppers(gui.BBOX_SIZE_THRESHOLD)
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
-
+                    peppers.find_peduncles()
+                    # pprint.pprint(peppers.final_pepper_list)
                     
                     gui.display_inference_stream(camera.saved_color_image)
 
