@@ -50,6 +50,7 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
 
             # Try to read bbox JSON
             peppers.read_JSON()
+            # If JSON was succesfully read, continue
             if peppers.json_file:
                 # Only parse data if read file matches saved frame
                 # Prevents desynch
