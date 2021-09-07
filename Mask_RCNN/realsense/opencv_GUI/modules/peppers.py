@@ -61,36 +61,38 @@ class Peppers:
             # If object is a pepper
             if(detected_object[1] == 1):
                 complete_pepper_list["peppers"][pepper_counter] = {}
-                complete_pepper_list["peppers"][pepper_counter]["x_min"] = detected_object[0][1]
-                complete_pepper_list["peppers"][pepper_counter]["x_max"] = detected_object[0][3]
-                complete_pepper_list["peppers"][pepper_counter]["y_min"] = detected_object[0][0]
-                complete_pepper_list["peppers"][pepper_counter]["y_max"] = detected_object[0][2]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"] ={}
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["x_min"] = detected_object[0][1]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["x_max"] = detected_object[0][3]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["y_min"] = detected_object[0][0]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["y_max"] = detected_object[0][2]
 
                 bbox_center = [
-                    int((complete_pepper_list["peppers"][pepper_counter]["x_max"] - complete_pepper_list["peppers"][pepper_counter]["x_min"] )/2 + complete_pepper_list["peppers"][pepper_counter]["x_min"]),
-                    int((complete_pepper_list["peppers"][pepper_counter]["y_max"] - complete_pepper_list["peppers"][pepper_counter]["y_min"])/2 + complete_pepper_list["peppers"][pepper_counter]["y_min"])
+                    int((complete_pepper_list["peppers"][pepper_counter]["2d_info"]["x_max"] - complete_pepper_list["peppers"][pepper_counter]["2d_info"]["x_min"])/2 + complete_pepper_list["peppers"][pepper_counter]["2d_info"]["x_min"]),
+                    int((complete_pepper_list["peppers"][pepper_counter]["2d_info"]["y_max"] - complete_pepper_list["peppers"][pepper_counter]["2d_info"]["y_min"])/2 + complete_pepper_list["peppers"][pepper_counter]["2d_info"]["y_min"])
                 ]
-                complete_pepper_list["peppers"][pepper_counter]["center"] = {}
-                complete_pepper_list["peppers"][pepper_counter]["center"]["x"] = bbox_center[0]
-                complete_pepper_list["peppers"][pepper_counter]["center"]["y"] = bbox_center[1]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["center"] = {}
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["center"]["x"] = bbox_center[0]
+                complete_pepper_list["peppers"][pepper_counter]["2d_info"]["center"]["y"] = bbox_center[1]
                 
                 pepper_counter = pepper_counter + 1
 
             # Is peduncle
             if(detected_object[1] == 2):
                 complete_pepper_list["peduncles"][peduncle_counter] = {}
-                complete_pepper_list["peduncles"][peduncle_counter]["x_min"] = detected_object[0][1]
-                complete_pepper_list["peduncles"][peduncle_counter]["x_max"] = detected_object[0][3]
-                complete_pepper_list["peduncles"][peduncle_counter]["y_min"] = detected_object[0][0]
-                complete_pepper_list["peduncles"][peduncle_counter]["y_max"] = detected_object[0][2]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"] = {}
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["x_min"] = detected_object[0][1]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["x_max"] = detected_object[0][3]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["y_min"] = detected_object[0][0]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["y_max"] = detected_object[0][2]
 
                 bbox_center = [
-                    int((complete_pepper_list["peduncles"][peduncle_counter]["x_max"] - complete_pepper_list["peduncles"][peduncle_counter]["x_min"])/2 + complete_pepper_list["peduncles"][peduncle_counter]["x_min"]),
-                    int((complete_pepper_list["peduncles"][peduncle_counter]["y_max"] - complete_pepper_list["peduncles"][peduncle_counter]["y_min"])/2 + complete_pepper_list["peduncles"][peduncle_counter]["y_min"])
+                    int((complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["x_max"] - complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["x_min"])/2 + complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["x_min"]),
+                    int((complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["y_max"] - complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["y_min"])/2 + complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["y_min"])
                 ]
-                complete_pepper_list["peduncles"][peduncle_counter]["center"] = {}
-                complete_pepper_list["peduncles"][peduncle_counter]["center"]["x"] = bbox_center[0]
-                complete_pepper_list["peduncles"][peduncle_counter]["center"]["y"] = bbox_center[1]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["center"] = {}
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["center"]["x"] = bbox_center[0]
+                complete_pepper_list["peduncles"][peduncle_counter]["2d_info"]["center"]["y"] = bbox_center[1]
 
                 peduncle_counter = peduncle_counter + 1
         # print(complete_pepper_list)
@@ -101,12 +103,18 @@ class Peppers:
         final_pepper_list = {}
         final_pepper_list["peppers"] = {}
         for key, pepper in self.complete_pepper_list["peppers"].items():
+            pepper = pepper["2d_info"]
             if(self.validate_size([ pepper["x_min"], pepper["x_max"] ], [ pepper["y_min"], pepper["y_max"] ], BBOX_SIZE_THRESHOLD)):
                 final_pepper_list["peppers"][pepper_counter] = {}
-                final_pepper_list["peppers"][pepper_counter] = pepper
+                final_pepper_list["peppers"][pepper_counter]["2d_info"] = {}
+                final_pepper_list["peppers"][pepper_counter]["2d_info"] = pepper
                 pepper_counter = pepper_counter + 1
 
         self.final_pepper_list = final_pepper_list
+        
+    def find_peduncles(self):
+        for pepper, information in self.final_pepper_list["peppers"].items():
+            print(information)
         
 
     def process_pepper_data(self):

@@ -54,14 +54,16 @@ class Windows():
 
     def draw_all_objects_bbox(self, saved_color_image, objects, pepper_color, peduncle_color, size):
         for key, value in objects.items():
+            
             for bbox_number, bbox in value.items():
+                info_2d = bbox['2d_info']
                 if key == 'peppers':
-                    cv2.rectangle(saved_color_image,    (int(bbox["x_min"] * self.expected), int(bbox["y_min"] * self.expected)), 
-                                                        (int(bbox["x_max"] * self.expected), int(bbox["y_max"] * self.expected)), 
+                    cv2.rectangle(saved_color_image,    (int(info_2d["x_min"] * self.expected), int(info_2d["y_min"] * self.expected)), 
+                                                        (int(info_2d["x_max"] * self.expected), int(info_2d["y_max"] * self.expected)), 
                                                         pepper_color, size)
                 if key == 'peduncles':
-                    cv2.rectangle(saved_color_image,    (int(bbox["x_min"] * self.expected), int(bbox["y_min"] * self.expected)), 
-                                                        (int(bbox["x_max"] * self.expected), int(bbox["y_max"] * self.expected)), 
+                    cv2.rectangle(saved_color_image,    (int(info_2d["x_min"] * self.expected), int(info_2d["y_min"] * self.expected)), 
+                                                        (int(info_2d["x_max"] * self.expected), int(info_2d["y_max"] * self.expected)), 
                                                         peduncle_color, size)
 
 
