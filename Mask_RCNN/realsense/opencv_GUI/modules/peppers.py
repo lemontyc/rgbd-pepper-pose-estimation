@@ -30,7 +30,7 @@ class Peppers:
         else:
             return False
 
-    def get_orientation(pepper_center, peduncle_center):
+    def get_orientation(self, pepper_center, peduncle_center):
         pepper_x = pepper_center[0]
         pepper_y = pepper_center[1]
         peduncle_x = peduncle_center[0]
@@ -138,7 +138,14 @@ class Peppers:
                         print("Found pepper {} with peduncle {}".format(pepper_2d_info, peduncle_2d_info))
                         self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = {}
                         self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = peduncle_2d_info
-                        
+    
+    def compute_angle(self):
+        for pepper, pepper_data in self.final_pepper_list["peppers"].items():
+            if "peduncle" in pepper_data["2d_info"]:
+                pepper_center      = [pepper_data["2d_info"]["fruit"]["center"]["x"], pepper_data["2d_info"]["fruit"]["center"]["y"]]
+                peduncle_center    = [pepper_data["2d_info"]["peduncle"]["center"]["x"], pepper_data["2d_info"]["peduncle"]["center"]["y"]]
+                self.final_pepper_list["peppers"][pepper]["2d_info"]["angle"] = self.get_orientation(pepper_center, peduncle_center)
+            
         
 
     def process_pepper_data(self):

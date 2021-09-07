@@ -62,7 +62,10 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
                     peppers.filter_peppers(gui.BBOX_SIZE_THRESHOLD)
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
                     peppers.find_peduncles()
-                    # pprint.pprint(peppers.final_pepper_list)
+                    gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
+                    peppers.compute_angle()
+                    gui.draw_angles(camera.saved_color_image, peppers.final_pepper_list)
+                    # pprint.pprint(peppers.final_pepper_list,peppers.final_pepper_list)
                     
                     gui.display_inference_stream(camera.saved_color_image)
 
