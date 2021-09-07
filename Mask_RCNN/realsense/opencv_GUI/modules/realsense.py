@@ -3,9 +3,10 @@ import pyrealsense2 as rs
 import os
 import numpy as np
 import time
+import cv2
 
 class Realsense:
-    def __init__(self, recording_path, m_rcnn_path):
+    def __init__(self, recording_path, m_rcnn_path, expected):
         # Save paths
         self.recording_path = recording_path
         self.m_rcnn_path = m_rcnn_path
@@ -20,7 +21,7 @@ class Realsense:
         self.config.enable_device_from_file(self.recording_path)
 
         # Start streaming from file
-        self.pipeline.start(self.config)
+        self.profile = self.pipeline.start(self.config)
 
         # Create colorizer object
         self.colorizer = rs.colorizer()
@@ -29,10 +30,11 @@ class Realsense:
         self.depth_frame_aligned = []
         self.depth_image_aligned_color = []
         self.color_image = []
-        self.saved_depth_image = []
+        self.saved_aligned_depth_frame = []
         self.saved_color_image = []
         self.start_time = 0
         self.frame_number = 0
+        self.expected = expected
 
     def start_capture_timer(self):
         self.start_time = time.time()
@@ -81,5 +83,72 @@ class Realsense:
         self.saved_color_image = self.color_image
 
     def save_depth(self):
-        self.saved_depth_image = np.asanyarray(self.depth_frame_aligned.get_data())
+        self.saved_aligned_depth_frame = self.depth_frame_aligned
         self.frame_number       = self.frames.get_frame_number()
+
+    def obtain_coordinates(self, final_pepper_list):
+        # Get Depth data from the sensor 
+        depth           = np.asanyarray(self.saved_aligned_depth_frame.get_data())
+        # Get data scale from the device and convert to meters
+        depth_scale     = self.profile.get_device().first_depth_sensor().get_depth_scale()
+        # Get intinsic values od alligned depth frame
+        depth_intrin    = self.saved_aligned_depth_frame.profile.as_video_stream_profile().intrinsics
+        
+        # Get pepper depth coordinates at pepper bbox center
+        for pepper, pepper_data in final_pepper_list["peppers"].items():
+            pepper_2d_data  = pepper_data["2d_info"]["fruit"]
+
+            xmin_depth = int((pepper_2d_data["x_min"] * self.expected))
+            ymin_depth = int((pepper_2d_data["y_min"] * self.expected))
+            xmax_depth = int((pepper_2d_data["x_max"] * self.expected))
+            ymax_depth = int((pepper_2d_data["y_max"] * self.expected))
+
+            # Get depth values at the bbox location
+            bbox_area_depth = depth[ymin_depth:ymax_depth,  xmin_depth:xmax_depth]
+            # Obtain average depth value, this will be used to obtain the centroid coordinates
+            bbox_centroid_pixel_depth_value,_,_,_ = cv2.mean(bbox_area_depth)
+            
+            # Get the centroid of the bbox
+            pepper_center      = [pepper_data["2d_info"]["fruit"]["center"]["x"], pepper_data["2d_info"]["fruit"]["center"]["y"]]
+
+            coordinates = rs.rs2_deproject_pixel_to_point(depth_intrin, pepper_center, bbox_centroid_pixel_depth_value * depth_scale)
+
+            final_pepper_list["peppers"][pepper]["3d_info"] = {}
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"] = {}
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"] = {}
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"]["Point"] = {}
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"]["Quaternion"] = {}
+            
+
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"]["Point"]["x"] = coordinates[0]
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"]["Point"]["y"] = coordinates[1]
+            final_pepper_list["peppers"][pepper]["3d_info"]["fruit"]["Pose"]["Point"]["z"] = coordinates[2]
+            
+            # If peduncle exist, get depth coordinates at peduncle bbox center
+            if "peduncle" in pepper_data["2d_info"]:
+                peduncle_2d_data  = pepper_data["2d_info"]["peduncle"]
+
+                xmin_depth = int((peduncle_2d_data["x_min"] * self.expected))
+                ymin_depth = int((peduncle_2d_data["y_min"] * self.expected))
+                xmax_depth = int((peduncle_2d_data["x_max"] * self.expected))
+                ymax_depth = int((peduncle_2d_data["y_max"] * self.expected))
+
+                # Get depth values at the bbox location
+                bbox_area_depth = depth[ymin_depth:ymax_depth,  xmin_depth:xmax_depth]
+                # Obtain average depth value, this will be used to obtain the centroid coordinates
+                bbox_centroid_pixel_depth_value,_,_,_ = cv2.mean(bbox_area_depth)
+                
+                # Get the centroid of the bbox
+                peduncle_center    = [pepper_data["2d_info"]["peduncle"]["center"]["x"], pepper_data["2d_info"]["peduncle"]["center"]["y"]]
+
+                coordinates = rs.rs2_deproject_pixel_to_point(depth_intrin, pepper_center, bbox_centroid_pixel_depth_value * depth_scale)
+
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"] = {}
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"] = {}
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"]["Point"] = {}
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"]["Quaternion"] = {}
+                
+
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"]["Point"]["x"] = coordinates[0]
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"]["Point"]["y"] = coordinates[1]
+                final_pepper_list["peppers"][pepper]["3d_info"]["peduncle"]["Pose"]["Point"]["z"] = coordinates[2]

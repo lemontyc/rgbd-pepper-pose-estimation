@@ -135,7 +135,7 @@ class Peppers:
                     pepper_center_x - avg_size/2 < peduncle_center_x):
                     if( pepper_center_y  > peduncle_center_y and 
                         pepper_center_y - avg_size   < peduncle_center_y):
-                        print("Found pepper {} with peduncle {}".format(pepper_2d_info, peduncle_2d_info))
+                        # print("Found pepper {} with peduncle {}".format(pepper_2d_info, peduncle_2d_info))
                         self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = {}
                         self.final_pepper_list["peppers"][pepper]["2d_info"]["peduncle"] = peduncle_2d_info
     

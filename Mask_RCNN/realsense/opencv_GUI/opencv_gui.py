@@ -12,8 +12,8 @@ M_RCNN_JSON_PATH = 'boxes'
 
 def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
     try:
-        camera = Realsense(recording_path, m_rcnn_path)
         peppers = Peppers(m_rcnn_path, m_rcnn_json_path)
+        camera = Realsense(recording_path, m_rcnn_path, peppers.expected)
         gui = Windows(peppers.expected)
         first_run = False
         
@@ -65,7 +65,9 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
                     peppers.compute_angle()
                     gui.draw_angles(camera.saved_color_image, peppers.final_pepper_list)
-                    # pprint.pprint(peppers.final_pepper_list,peppers.final_pepper_list)
+                    camera.obtain_coordinates(peppers.final_pepper_list)
+
+                    pprint.pprint(peppers.final_pepper_list)
                     
                     gui.display_inference_stream(camera.saved_color_image)
 
