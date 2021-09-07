@@ -10,15 +10,25 @@ class Realsense:
         # Save paths
         self.recording_path = recording_path
         self.m_rcnn_path = m_rcnn_path
-
+        
         # Create pipeline
         self.pipeline = rs.pipeline()
-
         # Create a config object
         self.config = rs.config()
 
-        # Tell config that we will use a recorded device from file to be used by the pipeline through playback.
-        self.config.enable_device_from_file(self.recording_path)
+        # Attempt to start stream from camera 
+        if recording_path == '':
+            # Get device product line for setting a supporting resolution
+            pipeline_wrapper = rs.pipeline_wrapper(self.pipeline)
+            pipeline_profile = self.config.resolve(pipeline_wrapper)
+            device = pipeline_profile.get_device()
+            device_product_line = str(device.get_info(rs.camera_info.product_line))
+
+            self.config.enable_stream(rs.stream.depth, 1280, 720, rs.format.z16, 15)
+            self.config.enable_stream(rs.stream.color, 1280, 720, rs.format.rgb8, 15)
+        else:
+            # Tell config that we will use a recorded device from file to be used by the pipeline through playback.
+            self.config.enable_device_from_file(self.recording_path)
 
         # Start streaming from file
         self.profile = self.pipeline.start(self.config)

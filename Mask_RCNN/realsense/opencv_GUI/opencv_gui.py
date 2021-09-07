@@ -1,9 +1,9 @@
-#%%
 from modules.realsense import Realsense
 from modules.peppers import Peppers
 from modules.gui import Windows
 from modules.utils import *
 import pprint
+import argparse
 
 RECORDING_PATH = '../../dataset/bags/cart_3_red_yellow.bag'
 M_RCNN_PATH = '../../src/Mask_RCNN/datasets/process'
@@ -60,7 +60,7 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
                     peppers.parse_json_data()
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.complete_pepper_list, (199, 240, 218), (129, 176, 247), 1)
                     peppers.filter_peppers(gui.BBOX_SIZE_THRESHOLD)
-                    gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
+                    # gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
                     peppers.find_peduncles()
                     gui.draw_all_objects_bbox(camera.saved_color_image, peppers.final_pepper_list, (57, 219, 98), (10, 88, 204),2)
                     peppers.compute_angle()
@@ -70,12 +70,8 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
                     pprint.pprint(peppers.final_pepper_list)
                     
                     gui.display_inference_stream(camera.saved_color_image)
-
                     
             
-
-
-
             gui.user_paused()
             if(gui.user_exited()):
                 break
@@ -89,5 +85,20 @@ def extract_frames(recording_path, m_rcnn_path, m_rcnn_json_path):
 
 
 if __name__ == "__main__":
-       extract_frames(RECORDING_PATH, M_RCNN_PATH, M_RCNN_JSON_PATH)
-# %%
+
+    # Create object for parsing command-line options
+    parser = argparse.ArgumentParser(description="GUI for visualizing M-RCNN pepper and peduncle detection  \
+                                    M-RCNN must also be started. This GUI works with a .bag or with a D435 camera connected")
+    # Add argument which takes path to a bag file as an input
+    parser.add_argument("-i", "--input", type=str, default="", help="(Optional) Path to the bag file, if not passed will try to start camera stream")
+    # Parse the command line arguments to an object
+    args = parser.parse_args()
+    # Check if the given file have bag extension
+    if args.input:
+        if os.path.splitext(args.input)[1] != ".bag":
+            print("The given file is not of correct file format.")
+            print("Only .bag files are accepted")
+            exit()
+    
+    RECORDING_PATH = args.input
+    extract_frames(RECORDING_PATH, M_RCNN_PATH, M_RCNN_JSON_PATH)
