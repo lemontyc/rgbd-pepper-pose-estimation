@@ -6,6 +6,10 @@
 
 # Custom image for tensorflow 1.3.0
 FROM tensorflow/tensorflow:1.3.0-gpu-py3
+
+# RUN apt-get install apt-transport-https ca-certificates
+RUN rm /etc/apt/sources.list.d/* && apt clean && apt update
+
 # Install useful tools
 RUN apt-get update -y
 RUN apt-get install -y nano
