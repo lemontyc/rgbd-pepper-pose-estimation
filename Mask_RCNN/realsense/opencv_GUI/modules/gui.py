@@ -20,7 +20,7 @@ class Windows():
         self.expected = expected
 
         # Add trackbars to modify detection settings
-        cv2.createTrackbar('ON/OFF','Detection', self.detection , 1, nothing)
+        # cv2.createTrackbar('ON/OFF','Detection', self.detection , 1, nothing)
         cv2.createTrackbar('Seconds','Detection', self.capture_delay, 10,nothing)
         cv2.createTrackbar('Min BBOX Size','Detection', self.BBOX_SIZE_THRESHOLD, 200,nothing)
 
@@ -46,7 +46,7 @@ class Windows():
         cv2.imshow("Color/Depth Stream", cv2.cvtColor(stacked_depth_and_color_images, cv2.COLOR_RGB2BGR))
 
     def read_trackbars(self):
-        self.detection               = cv2.getTrackbarPos('ON/OFF','Detection')
+        # self.detection               = cv2.getTrackbarPos('ON/OFF','Detection')
         self.capture_delay           = cv2.getTrackbarPos('Seconds','Detection')
         self.BBOX_SIZE_THRESHOLD     = cv2.getTrackbarPos('Min BBOX Size','Detection')
 
@@ -80,14 +80,13 @@ class Windows():
         for pepper, pepper_data in final_pepper_list["peppers"].items():
             if "angle" in pepper_data["2d_info"]:
                 angle = pepper_data["2d_info"]["angle"]
-                line_end        = []
-                pepper_center      = [pepper_data["2d_info"]["fruit"]["center"]["x"], pepper_data["2d_info"]["fruit"]["center"]["y"]]
-                peduncle_center    = [pepper_data["2d_info"]["peduncle"]["center"]["x"], pepper_data["2d_info"]["peduncle"]["center"]["y"]]
+                
+                pepper_center      = (pepper_data["2d_info"]["fruit"]["center"]["x"], pepper_data["2d_info"]["fruit"]["center"]["y"])
+                peduncle_center    = (pepper_data["2d_info"]["peduncle"]["center"]["x"], pepper_data["2d_info"]["peduncle"]["center"]["y"])
                 
                 length = math.sqrt( ((pepper_center[0] - peduncle_center[0]) ** 2 )+((pepper_center[1] - peduncle_center[1]) ** 2) )
 
-                line_end.append(int(pepper_center[0] + length * math.cos(angle * math.pi / 180)))
-                line_end.append(int(pepper_center[1] + length * math.sin(angle * math.pi / 180)))
+                line_end = (int(pepper_center[0] + length * math.cos(angle * math.pi / 180)), int(pepper_center[1] + length * math.sin(angle * math.pi / 180)))
 
                 cv2.line(saved_color_image, pepper_center, line_end, (255, 0, 0), 2)
     

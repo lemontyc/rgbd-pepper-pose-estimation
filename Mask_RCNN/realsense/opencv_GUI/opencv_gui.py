@@ -99,6 +99,9 @@ if __name__ == "__main__":
             print("The given file is not of correct file format.")
             print("Only .bag files are accepted")
             exit()
+        print("Opening {}".format(args.input))
+    else:
+        print("No bag file provided, will try to start camera stream")
     
     RECORDING_PATH = args.input
     extract_frames(RECORDING_PATH, M_RCNN_PATH, M_RCNN_JSON_PATH)
