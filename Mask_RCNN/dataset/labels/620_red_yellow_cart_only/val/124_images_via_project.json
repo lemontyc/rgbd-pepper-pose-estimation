@@ -23,7 +23,7 @@
         "core": {
             "buffer_size": "18",
             "filepath": {},
-            "default_filepath": "/home/lemontyc/GitHub/rgbd-pepper-pose-estimation/Mask_RCNN/src/Mask_RCNN/datasets/620_red_yellow_cart_only/val/"
+            "default_filepath": "/home/luis/GitHub/rgbd-pepper-pose-estimation/Mask_RCNN/src/Mask_RCNN/datasets/620_red_yellow_cart_only/val/"
         },
         "project": {
             "name": "124_images_via_project"

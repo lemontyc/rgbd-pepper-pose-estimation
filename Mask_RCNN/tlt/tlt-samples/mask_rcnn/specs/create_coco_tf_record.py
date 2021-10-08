@@ -67,7 +67,7 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.INFO)
 
 def create_tf_example(image,
                       bbox_annotations,
-                      caption_annotations,
+                      # caption_annotations,
                       image_dir,
                       category_index,
                       include_masks=False):
@@ -104,6 +104,8 @@ def create_tf_example(image,
   image_width = image['width']
   filename = image['file_name']
   image_id = image['id']
+
+  # print(image_dir)
 
   full_path = os.path.join(image_dir, filename)
   with tf.io.gfile.GFile(full_path, 'rb') as fid:
@@ -151,9 +153,9 @@ def create_tf_example(image,
       pil_image.save(output_io, format='PNG')
       encoded_mask_png.append(output_io.getvalue())
 
-  captions = []
-  for caption_annotation in caption_annotations:
-    captions.append(caption_annotation['caption'].encode('utf8'))
+  # captions = []
+  # for caption_annotation in caption_annotations:
+  #   captions.append(caption_annotation['caption'].encode('utf8'))
 
   feature_dict = {
       'image/height':
@@ -168,8 +170,8 @@ def create_tf_example(image,
           dataset_util.bytes_feature(key.encode('utf8')),
       'image/encoded':
           dataset_util.bytes_feature(encoded_jpg),
-      'image/caption':
-        dataset_util.bytes_list_feature(captions),
+      # 'image/caption':
+      #   dataset_util.bytes_list_feature(captions),
       'image/format':
           dataset_util.bytes_feature('jpeg'.encode('utf8')),
       'image/object/bbox/xmin':
@@ -271,8 +273,8 @@ def _create_tf_record_from_coco_annotations(
 
   images, img_to_obj_annotation, category_index = (
       _load_object_annotations(object_annotations_file))
-  img_to_caption_annotation = (
-      _load_caption_annotations(caption_annotations_file))
+  # img_to_caption_annotation = (
+  #     _load_caption_annotations(caption_annotations_file))
 
   pool = multiprocessing.Pool()
   total_num_annotations_skipped = 0
@@ -280,7 +282,7 @@ def _create_tf_record_from_coco_annotations(
       pool.imap(_pool_create_tf_example,
                 [(image,
                   img_to_obj_annotation[image['id']],
-                  img_to_caption_annotation[image['id']],
+                  # img_to_caption_annotation[image['id']],
                   image_dir,
                   category_index,
                   include_masks)

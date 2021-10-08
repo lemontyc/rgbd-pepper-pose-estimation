@@ -4,7 +4,7 @@ warmup_steps: 1000
 checkpoint: "/workspace/tlt-experiments/mask_rcnn/pretrained_resnet50/tlt_instance_segmentation_vresnet50/resnet50.hdf5"
 learning_rate_steps: "[10000, 15000, 20000]"
 learning_rate_decay_levels: "[0.1, 0.02, 0.01]"
-total_steps: 25000
+total_steps: 100000
 train_batch_size: 1
 eval_batch_size: 1
 num_steps_per_eval: 5000
@@ -19,7 +19,7 @@ data_config{
     eval_samples: 500
     training_file_pattern: "/workspace/tlt-experiments/data/train*.tfrecord"
     validation_file_pattern: "/workspace/tlt-experiments/data/val*.tfrecord"
-    val_json_file: "/workspace/tlt-experiments/data/annotations/instances_val2017.json"
+    val_json_file: "/workspace/tlt-experiments/data/annotations/instances_val2021.json"
 
     # dataset specific parameters
     num_classes: 91
