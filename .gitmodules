@@ -1,2 +1,3 @@
-[submodule "workspace/Mask_RCNN"]
+[submodule "Mask_RCNN"]
+	path = workspace/Mask_RCNN
 	url = https://github.com/lemontyc/Mask_RCNN.git

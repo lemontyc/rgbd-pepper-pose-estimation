@@ -17,10 +17,16 @@ RUN apt-get install -y git
 RUN apt-get install -y libgl1-mesa-glx
 RUN pip install --upgrade pip
 # Create directory where we will clone the Mask-RCNN repo and clone repo
-RUN mkdir -p /home/pepper/GitHub
+RUN mkdir -p /workspace
+
+# Copy Mask Repo to container
+COPY Mask_RCNN /workspace/Mask_RCNN
 
 # Set as workdir
-WORKDIR /home/pepper/GitHub
+WORKDIR /workspace/Mask_RCNN
 
-EXPOSE 8888
-EXPOSE 6006
+RUN pip install -r requirements.txt
+RUN python setup.py install
+
+# Set as workdir
+WORKDIR /workspace
