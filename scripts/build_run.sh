@@ -1,7 +1,8 @@
 #!/bin/bash
+
 # Build docker image
 docker build \
---file=tensorflow.Dockerfile \
+--file=../docker/tensorflow.Dockerfile \
 --tag="m_rcnn:0.1" \
 .
 # Create folder that will bind to container
