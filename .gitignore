@@ -5,6 +5,7 @@ src/Mask_RCNN/
 *.eltlt
 *.engine
 *.hdf5
+.ipynb_checkpoints
 
 realsense/opencv_GUI/modules/__pycache__/
 tlt/tlt-experiments/data
