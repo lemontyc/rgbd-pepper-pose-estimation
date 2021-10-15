@@ -1,3 +1,8 @@
 [submodule "Mask_RCNN"]
 	path = workspace/Mask_RCNN
 	url = https://github.com/lemontyc/Mask_RCNN.git
+
+[submodule "RGBD-ROS"]
+	path = ROS/rgbd-pepper-pose-estimation-ros
+	url = https://github.com/lemontyc/rgbd-pepper-pose-estimation-ros.git
+	branch = no-visual-servoing
